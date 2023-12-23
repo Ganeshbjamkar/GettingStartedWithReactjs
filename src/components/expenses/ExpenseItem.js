@@ -9,9 +9,16 @@ const ExpenseItem = (props) => {
   const [title, setTitle] = useState(props.title);
   console.log("ExpenseItem evaluated by React");
 
+  const [amount, setAmount] = useState(props.amount);
+
   const clickHandler = () => {
     setTitle("Updated!");
     console.log(title);
+  };
+
+  const changeAmountHandler = () => {
+    setAmount(100);
+    console.log(amount);
   };
 
   const deleteHandler = () => {
@@ -26,6 +33,7 @@ const ExpenseItem = (props) => {
         <div className="expense-item__price">${props.amount}</div>
       </div>
       <button onClick={clickHandler}>Change Title</button>
+      <button onClick={changeAmountHandler}>Change Amount</button>
       <button onClick={deleteHandler}>Delete Item</button>
     </Card>
   );
